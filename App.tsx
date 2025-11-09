@@ -8,6 +8,7 @@ import Dashboard from './components/Dashboard';
 import EvaluationDashboard from './components/EvaluationDashboard';
 import DeploymentManager from './components/DeploymentManager';
 import SystemStatus from './components/SystemStatus';
+import FloatingChatbot from './components/FloatingChatbot';
 import { Entity, Relationship } from './services/nlpService';
 import { GraphData } from './services/graphService';
 import { Network, MessageCircle, BarChart3, Bot, Target, Rocket, Activity, Mic } from 'lucide-react';
@@ -102,10 +103,10 @@ function App() {
           )}
           {activeView === 'query' && (
             <div className="animate-fadeIn">
-              <QueryInterface 
-                entities={entities} 
-                relationships={relationships} 
-                graphData={graphData} 
+              <QueryInterface
+                entities={entities}
+                relationships={relationships}
+                graphData={graphData}
               />
             </div>
           )}
@@ -145,6 +146,9 @@ function App() {
           )}
         </div>
       </div>
+
+      {/* Floating Chatbot */}
+      <FloatingChatbot />
     </div>
   );
 }
